@@ -146,7 +146,7 @@
                             <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-all">
                                 Registrarse
                             </button>
-                            <button id="showLoginBtn" type="button" class="w-full flex justify-center py-3 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-all">
+                            <button id="showLoginBtn" type="button" class="w-full inline-flex justify-center py-3 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-all">
                                 Volver a Iniciar Sesión
                             </button>
                         </div>
@@ -163,6 +163,9 @@
                     <i class="fas fa-graduation-cap text-2xl"></i>
                     <h1 class="text-xl md:text-2xl font-bold">Sistema Académico</h1>
                 </div>
+                <button id="menuToggleBtn" class="md:hidden text-white focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
                 <div class="flex items-center space-x-4">
                     <div class="hidden md:flex items-center space-x-2">
                         <img src="https://ui-avatars.com/api/?name=Gabriela+Corredor&background=random" alt="User" class="w-8 h-8 rounded-full">
@@ -176,7 +179,7 @@
         </header>
 
         <div class="container mx-auto px-4 py-6 flex flex-col md:flex-row">
-            <aside class="w-full md:w-64 bg-white rounded-lg shadow-md mb-6 md:mb-0 md:mr-6 sidebar sticky top-4">
+            <aside id="sidebar" class="w-full md:w-64 bg-white rounded-lg shadow-md mb-6 md:mb-0 md:mr-6 sidebar sticky top-4 hidden md:block">
                 <nav class="p-4">
                     <ul class="space-y-2">
                         <li>

@@ -16,6 +16,10 @@ const demoBtn = document.getElementById('demoBtn');
 const confirmDemoBtn = document.getElementById('confirmDemoBtn');
 const cancelDemoBtn = document.getElementById('cancelDemoBtn');
 
+// Elementos del menú móvil
+const menuToggleBtn = document.getElementById('menuToggleBtn');
+const sidebar = document.getElementById('sidebar');
+
 // Funciones para alternar vistas
 function showDashboard() {
     authContainer.classList.add('hidden');
@@ -65,7 +69,7 @@ cancelDemoBtn.addEventListener('click', function() {
 });
 
 confirmDemoBtn.addEventListener('click', function() {
-    alert('Redirigiendo al panel de demostración...');
+    // Se elimina el 'alert' y se llama directamente a showDashboard
     demoModal.classList.add('hidden');
     showDashboard();
 });
@@ -75,4 +79,9 @@ window.addEventListener('click', function(event) {
     if (event.target === demoModal) {
         demoModal.classList.add('hidden');
     }
+});
+
+// Funcionalidad para el menú de hamburguesa en móviles
+menuToggleBtn.addEventListener('click', function() {
+    sidebar.classList.toggle('hidden');
 });
