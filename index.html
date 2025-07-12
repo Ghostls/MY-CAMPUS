@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Gestión Académica</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="gradient-bg min-h-screen flex items-center justify-center p-4">
+    <div id="authContainer" class="max-w-6xl w-full mx-auto bg-white rounded-2xl overflow-hidden shadow-xl">
+        <div class="md:flex">
+            <div class="md:w-1/2 p-12 bg-gradient-to-br from-indigo-500 to-purple-600 text-white flex flex-col justify-center">
+                <div class="mb-8">
+                    <h1 class="text-4xl font-bold mb-2">Bienvenido al Sistema de Gestión Académica</h1>
+                    <p class="text-indigo-100">Gestiona tu perfil, historial académico y progreso de carrera de manera sencilla y eficiente.</p>
+                </div>
+                <div class="space-y-4">
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 mt-1"><i class="fas fa-check-circle text-green-300"></i></div>
+                        <div class="ml-3"><p class="text-sm text-indigo-100">Accede a tu historial académico completo</p></div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 mt-1"><i class="fas fa-check-circle text-green-300"></i></div>
+                        <div class="ml-3"><p class="text-sm text-indigo-100">Visualiza tu progreso en la carrera</p></div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 mt-1"><i class="fas fa-check-circle text-green-300"></i></div>
+                        <div class="ml-3"><p class="text-sm text-indigo-100">Actualiza tu información personal</p></div>
+                    </div>
+                </div>
+                <div class="mt-12">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0">
+                            <img class="h-12 w-12 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="Profesor">
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-sm font-medium text-indigo-100">¿Eres profesor?</p>
+                            <button id="demoBtn" class="text-sm font-medium text-white hover:text-indigo-200 focus:outline-none">
+                                Prueba la versión demo
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="md:w-1/2 p-12 bg-white">
+                <div id="loginForm">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-6">Iniciar Sesión</h2>
+                    <form id="login-form" class="space-y-6">
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700">Correo Electrónico</label>
+                            <div class="mt-1 relative rounded-md shadow-sm">
+                                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"><i class="fas fa-envelope text-gray-400"></i></div>
+                                <input type="email" id="email" name="email" required class="py-3 pl-10 block w-full border border-gray-300 rounded-md input-focus focus:ring-indigo-500 focus:border-indigo-500 transition-all">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="password" class="block text-sm font-medium text-gray-700">Contraseña</label>
+                            <div class="mt-1 relative rounded-md shadow-sm">
+                                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"><i class="fas fa-lock text-gray-400"></i></div>
+                                <input type="password" id="password" name="password" required class="py-3 pl-10 block w-full border border-gray-300 rounded-md input-focus focus:ring-indigo-500 focus:border-indigo-500 transition-all">
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <input id="remember-me" name="remember-me" type="checkbox" class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded">
+                                <label for="remember-me" class="ml-2 block text-sm text-gray-700">Recordarme</label>
+                            </div>
+                            <div class="text-sm">
+                                <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500">¿Olvidaste tu contraseña?</a>
+                            </div>
+                        </div>
+                        <div>
+                            <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-all">
+                                Ingresar
+                            </button>
+                        </div>
+                    </form>
+                    <div class="mt-6">
+                        <div class="relative">
+                            <div class="absolute inset-0 flex items-center"><div class="w-full border-t border-gray-300"></div></div>
+                            <div class="relative flex justify-center text-sm"><span class="px-2 bg-white text-gray-500">¿No tienes una cuenta?</span></div>
+                        </div>
+                        <div class="mt-6">
+                            <button id="showRegisterBtn" class="w-full flex justify-center py-3 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-all">
+                                Registrarse
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="registerForm" class="hidden">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-6">Registrarse</h2>
+                    <form class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="firstName" class="block text-sm font-medium text-gray-700">Nombres</label>
+                                <div class="mt-1 relative rounded-md shadow-sm">
+                                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"><i class="fas fa-user text-gray-400"></i></div>
+                                    <input type="text" id="firstName" name="firstName" required class="py-3 pl-10 block w-full border border-gray-300 rounded-md input-focus focus:ring-indigo-500 focus:border-indigo-500 transition-all">
+                                </div>
+                            </div>
+                            <div>
+                                <label for="lastName" class="block text-sm font-medium text-gray-700">Apellidos</label>
+                                <div class="mt-1 relative rounded-md shadow-sm">
+                                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"><i class="fas fa-user text-gray-400"></i></div>
+                                    <input type="text" id="lastName" name="lastName" required class="py-3 pl-10 block w-full border border-gray-300 rounded-md input-focus focus:ring-indigo-500 focus:border-indigo-500 transition-all">
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <label for="idNumber" class="block text-sm font-medium text-gray-700">Cédula</label>
+                            <div class="mt-1 relative rounded-md shadow-sm">
+                                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"><i class="fas fa-id-card text-gray-400"></i></div>
+                                <input type="text" id="idNumber" name="idNumber" required class="py-3 pl-10 block w-full border border-gray-300 rounded-md input-focus focus:ring-indigo-500 focus:border-indigo-500 transition-all">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="registerEmail" class="block text-sm font-medium text-gray-700">Correo Electrónico</label>
+                            <div class="mt-1 relative rounded-md shadow-sm">
+                                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"><i class="fas fa-envelope text-gray-400"></i></div>
+                                <input type="email" id="registerEmail" name="registerEmail" required class="py-3 pl-10 block w-full border border-gray-300 rounded-md input-focus focus:ring-indigo-500 focus:border-indigo-500 transition-all">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="registerPassword" class="block text-sm font-medium text-gray-700">Contraseña</label>
+                            <div class="mt-1 relative rounded-md shadow-sm">
+                                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"><i class="fas fa-lock text-gray-400"></i></div>
+                                <input type="password" id="registerPassword" name="registerPassword" required class="py-3 pl-10 block w-full border border-gray-300 rounded-md input-focus focus:ring-indigo-500 focus:border-indigo-500 transition-all">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="confirmPassword" class="block text-sm font-medium text-gray-700">Confirmar Contraseña</label>
+                            <div class="mt-1 relative rounded-md shadow-sm">
+                                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"><i class="fas fa-lock text-gray-400"></i></div>
+                                <input type="password" id="confirmPassword" name="confirmPassword" required class="py-3 pl-10 block w-full border border-gray-300 rounded-md input-focus focus:ring-indigo-500 focus:border-indigo-500 transition-all">
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="terms" name="terms" type="checkbox" class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded">
+                            <label for="terms" class="ml-2 block text-sm text-gray-700">Acepto los <a href="#" class="text-indigo-600 hover:text-indigo-500">Términos y Condiciones</a></label>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-all">
+                                Registrarse
+                            </button>
+                            <button id="showLoginBtn" type="button" class="w-full flex justify-center py-3 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-all">
+                                Volver a Iniciar Sesión
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="dashboardContainer" class="hidden w-full bg-gray-100 min-h-screen">
+        <header class="bg-blue-600 text-white shadow-lg">
+            <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-graduation-cap text-2xl"></i>
+                    <h1 class="text-xl md:text-2xl font-bold">Sistema Académico</h1>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="hidden md:flex items-center space-x-2">
+                        <img src="https://ui-avatars.com/api/?name=Gabriela+Corredor&background=random" alt="User" class="w-8 h-8 rounded-full">
+                        <span class="font-medium">Gabriela Corredor</span>
+                    </div>
+                    <button id="logoutBtn" class="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded-md transition-all">
+                        <i class="fas fa-sign-out-alt"></i> <span class="hidden md:inline">Cerrar sesión</span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <div class="container mx-auto px-4 py-6 flex flex-col md:flex-row">
+            <aside class="w-full md:w-64 bg-white rounded-lg shadow-md mb-6 md:mb-0 md:mr-6 sidebar sticky top-4">
+                <nav class="p-4">
+                    <ul class="space-y-2">
+                        <li>
+                            <a href="#" class="flex items-center space-x-2 p-3 rounded-md hover:bg-blue-50 transition-all active-tab">
+                                <i class="fas fa-user text-blue-500"></i>
+                                <span>Perfil</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex items-center space-x-2 p-3 rounded-md hover:bg-blue-50 transition-all">
+                                <i class="fas fa-book text-gray-600"></i>
+                                <span>Historial Académico</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex items-center space-x-2 p-3 rounded-md hover:bg-blue-50 transition-all">
+                                <i class="fas fa-chart-line text-gray-600"></i>
+                                <span>Progreso de Carrera</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex items-center space-x-2 p-3 rounded-md hover:bg-blue-50 transition-all">
+                                <i class="fas fa-calendar-alt text-gray-600"></i>
+                                <span>Horario</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex items-center space-x-2 p-3 rounded-md hover:bg-blue-50 transition-all">
+                                <i class="fas fa-cog text-gray-600"></i>
+                                <span>Configuración</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </aside>
+
+            <main class="flex-1">
+                <section class="bg-white rounded-lg shadow-md p-6 mb-6">
+                    <div class="flex justify-between items-center mb-6">
+                        <h2 class="text-xl font-bold text-gray-800">Perfil del Estudiante</h2>
+                        <button id="editProfileBtn" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md transition-all">
+                            <i class="fas fa-edit mr-2"></i>Editar Perfil
+                        </button>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="col-span-1 flex flex-col items-center">
+                            <img src="https://ui-avatars.com/api/?name=Gabriela+Corredor&background=random" alt="Profile" class="w-32 h-32 rounded-full mb-4 border-4 border-blue-100">
+                            <h3 class="text-lg font-semibold">Gabriela Corredor</h3>
+                            <p class="text-gray-600">Estudiante de Ingeniería</p>
+                            <div class="mt-4 flex space-x-2">
+                                <button class="bg-blue-100 text-blue-600 p-2 rounded-full hover:bg-blue-200 transition-all"><i class="fab fa-facebook-f"></i></button>
+                                <button class="bg-blue-100 text-blue-600 p-2 rounded-full hover:bg-blue-200 transition-all"><i class="fab fa-twitter"></i></button>
+                                <button class="bg-blue-100 text-blue-600 p-2 rounded-full hover:bg-blue-200 transition-all"><i class="fab fa-linkedin-in"></i></button>
+                            </div>
+                        </div>
+                        <div class="col-span-1 md:col-span-2">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <h4 class="font-medium text-gray-700 mb-2">Información Personal</h4>
+                                    <div class="space-y-2">
+                                        <p><span class="font-medium">Cédula:</span> V0000000</p>
+                                        <p><span class="font-medium">Fecha Nacimiento:</span> 08/10/2001</p>
+                                        <p><span class="font-medium">Género:</span> Femenino</p>
+                                        <p><span class="font-medium">Nacionalidad:</span> Venezolana</p>
+                                    </div>
+                                </div>
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <h4 class="font-medium text-gray-700 mb-2">Información de Contacto</h4>
+                                    <div class="space-y-2">
+                                        <p><span class="font-medium">Correo:</span> GabiC@example.com</p>
+                                        <p><span class="font-medium">Teléfono:</span> +58 412 0000000</p>
+                                        <p><span class="font-medium">Dirección:</span> Barquisimeto, Edo Lara</p>
+                                    </div>
+                                </div>
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <h4 class="font-medium text-gray-700 mb-2">Información Académica</h4>
+                                    <div class="space-y-2">
+                                        <p><span class="font-medium">Carrera:</span> Ingeniería en Computación</p>
+                                        <p><span class="font-medium">Facultad:</span> Ingenierías</p>
+                                        <p><span class="font-medium">Nivel:</span> 5to Semestre</p>
+                                        <p><span class="font-medium">Promedio:</span> 18</p>
+                                    </div>
+                                </div>
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <h4 class="font-medium text-gray-700 mb-2">Estado Actual</h4>
+                                    <div class="space-y-2">
+                                        <p><span class="font-medium">Estado:</span> <span class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs">Activo</span></p>
+                                        <p><span class="font-medium">Matrícula:</span> <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs">Regular</span></p>
+                                        <p><span class="font-medium">Créditos:</span> 120/240</p>
+                                        <p><span class="font-medium">Próximo Semestre:</span> 2026</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                    <div class="bg-white rounded-lg shadow-md p-6 flex items-center card-hover transition-all">
+                        <div class="bg-blue-100 text-blue-600 p-3 rounded-full mr-4"><i class="fas fa-book-open text-xl"></i></div>
+                        <div>
+                            <h3 class="text-gray-500 text-sm">Materias Aprobadas</h3>
+                            <p class="text-2xl font-bold">22</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md p-6 flex items-center card-hover transition-all">
+                        <div class="bg-green-100 text-green-600 p-3 rounded-full mr-4"><i class="fas fa-check-circle text-xl"></i></div>
+                        <div>
+                            <h3 class="text-gray-500 text-sm">Materias Actuales</h3>
+                            <p class="text-2xl font-bold">6</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md p-6 flex items-center card-hover transition-all">
+                        <div class="bg-yellow-100 text-yellow-600 p-3 rounded-full mr-4"><i class="fas fa-clock text-xl"></i></div>
+                        <div>
+                            <h3 class="text-gray-500 text-sm">Porcentaje Avance</h3>
+                            <p class="text-2xl font-bold">55%</p>
+                        </div>
+                    </div>
+                </section>
+                <section class="bg-white rounded-lg shadow-md p-6">
+                    <h2 class="text-xl font-bold text-gray-800 mb-4">Actividad Reciente</h2>
+                    <div class="space-y-4">
+                        <div class="flex items-start border-b pb-4">
+                            <div class="bg-blue-100 text-blue-600 p-2 rounded-full mr-3"><i class="fas fa-check"></i></div>
+                            <div>
+                                <p class="font-medium">Aprobaste la materia "Base de Datos II"</p>
+                                <p class="text-sm text-gray-500">Hace 2 días - Calificación: 18</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start border-b pb-4">
+                            <div class="bg-green-100 text-green-600 p-2 rounded-full mr-3"><i class="fas fa-book"></i></div>
+                            <div>
+                                <p class="font-medium">Te matriculaste en "Circuitos"</p>
+                                <p class="text-sm text-gray-500">Hace 1 semana</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start border-b pb-4">
+                            <div class="bg-yellow-100 text-yellow-600 p-2 rounded-full mr-3"><i class="fas fa-exclamation-circle"></i></div>
+                            <div>
+                                <p class="font-medium">Pendiente de pago de matrícula</p>
+                                <p class="text-sm text-gray-500">Hace 2 semanas</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+    
+    <div id="demoModal" class="hidden fixed inset-0 overflow-y-auto z-50">
+        <div class="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+            <div class="fixed inset-0 transition-opacity" aria-hidden="true"><div class="absolute inset-0 bg-gray-500 opacity-75"></div></div>
+            <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+            <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
+                <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                    <div class="sm:flex sm:items-start">
+                        <div class="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-indigo-100 sm:mx-0 sm:h-10 sm:w-10"><i class="fas fa-graduation-cap text-indigo-600"></i></div>
+                        <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
+                            <h3 class="text-lg leading-6 font-medium text-gray-900">Acceso al Modo Demo</h3>
+                            <div class="mt-2"><p class="text-sm text-gray-500">Estás a punto de ingresar al sistema en modo demostración. Podrás explorar todas las funcionalidades del sistema sin necesidad de registrarte.</p></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+                    <button type="button" id="confirmDemoBtn" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-indigo-600 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:ml-3 sm:w-auto sm:text-sm transition-all">
+                        Ingresar al Demo
+                    </button>
+                    <button type="button" id="cancelDemoBtn" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm transition-all">
+                        Cancelar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
