@@ -161,7 +161,7 @@
             <div class="container mx-auto px-4 py-4 flex justify-between items-center">
                 <div class="flex items-center space-x-2">
                     <i class="fas fa-graduation-cap text-2xl"></i>
-                    <h1 class="text-xl md:text-2xl font-bold">Sistema Académico</h1>
+                    <h1 class="text-xl md:text-2xl font-bold">MY CAMPUS</h1>
                 </div>
                 <button id="menuToggleBtn" class="md:hidden text-white focus:outline-none">
                     <i class="fas fa-bars text-2xl"></i>
@@ -183,27 +183,29 @@
                 <nav class="p-4">
                     <ul class="space-y-2">
                         <li>
-                            <a href="#" class="flex items-center space-x-2 p-3 rounded-md hover:bg-blue-50 transition-all active-tab">
+                            <a href="#" id="showProfileBtn" class="flex items-center space-x-2 p-3 rounded-md hover:bg-blue-50 transition-all active-tab">
                                 <i class="fas fa-user text-blue-500"></i>
                                 <span>Perfil</span>
                             </a>
                         </li>
+                        
                         <li>
-                            <a href="#" class="flex items-center space-x-2 p-3 rounded-md hover:bg-blue-50 transition-all">
+                            <a href="#" id="showAcademicHistoryBtn" class="flex items-center space-x-2 p-3 rounded-md hover:bg-blue-50 transition-all">
                                 <i class="fas fa-book text-gray-600"></i>
                                 <span>Historial Académico</span>
                             </a>
                         </li>
                         <li>
-                            <a href="#" class="flex items-center space-x-2 p-3 rounded-md hover:bg-blue-50 transition-all">
-                                <i class="fas fa-chart-line text-gray-600"></i>
-                                <span>Progreso de Carrera</span>
-                            </a>
+                             <a href="#" id="showPensumBtn" class="flex items-center space-x-2 p-3 rounded-md hover:bg-blue-50 transition-all">
+                                <i class="fas fa-list-alt text-gray-600"></i>
+                                <span>Pensum de Estudio</span>
+                             </a>
                         </li>
+
                         <li>
-                            <a href="#" class="flex items-center space-x-2 p-3 rounded-md hover:bg-blue-50 transition-all">
-                                <i class="fas fa-calendar-alt text-gray-600"></i>
-                                <span>Horario</span>
+                            <a href="#" id="showReportsBtn" class="flex items-center py-2 px-4 text-gray-600 hover:bg-gray-200 rounded-md transition-all">
+                                <i class="fas fa-chart-line mr-3 text-gray-600"></i>
+                                <span>Reportes</span>
                             </a>
                         </li>
                         <li>
@@ -212,18 +214,20 @@
                                 <span>Configuración</span>
                             </a>
                         </li>
+                        
                     </ul>
                 </nav>
             </aside>
 
             <main class="flex-1">
-                <section class="bg-white rounded-lg shadow-md p-6 mb-6">
+                <section id="profileSection" class="bg-white rounded-lg shadow-md p-6 mb-6">
                     <div class="flex justify-between items-center mb-6">
                         <h2 class="text-xl font-bold text-gray-800">Perfil del Estudiante</h2>
                         <button id="editProfileBtn" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md transition-all">
                             <i class="fas fa-edit mr-2"></i>Editar Perfil
                         </button>
                     </div>
+                    
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                         <div class="col-span-1 flex flex-col items-center">
                             <img src="https://ui-avatars.com/api/?name=Gabriela+Corredor&background=random" alt="Profile" class="w-32 h-32 rounded-full mb-4 border-4 border-blue-100">
@@ -275,7 +279,15 @@
                             </div>
                         </div>
                     </div>
+                                      <div class="mt-8 pt-6 border-t border-gray-200">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-4">Gestión de Cuenta</h3>
+                        <button id="deleteAccountBtn" class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-lg shadow-md transition duration-300">
+                            <i class="fas fa-user-slash mr-2"></i> Eliminar Cuenta
+                        </button>
+                        <p class="text-sm text-gray-500 mt-2">Esta acción eliminará permanentemente tu cuenta y todos tus datos. No se podrá deshacer.</p>
+                    </div>
                 </section>
+            
                 <section class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
                     <div class="bg-white rounded-lg shadow-md p-6 flex items-center card-hover transition-all">
                         <div class="bg-blue-100 text-blue-600 p-3 rounded-full mr-4"><i class="fas fa-book-open text-xl"></i></div>
@@ -299,32 +311,182 @@
                         </div>
                     </div>
                 </section>
-                <section class="bg-white rounded-lg shadow-md p-6">
-                    <h2 class="text-xl font-bold text-gray-800 mb-4">Actividad Reciente</h2>
-                    <div class="space-y-4">
-                        <div class="flex items-start border-b pb-4">
-                            <div class="bg-blue-100 text-blue-600 p-2 rounded-full mr-3"><i class="fas fa-check"></i></div>
-                            <div>
-                                <p class="font-medium">Aprobaste la materia "Base de Datos II"</p>
-                                <p class="text-sm text-gray-500">Hace 2 días - Calificación: 18</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start border-b pb-4">
-                            <div class="bg-green-100 text-green-600 p-2 rounded-full mr-3"><i class="fas fa-book"></i></div>
-                            <div>
-                                <p class="font-medium">Te matriculaste en "Circuitos"</p>
-                                <p class="text-sm text-gray-500">Hace 1 semana</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start border-b pb-4">
-                            <div class="bg-yellow-100 text-yellow-600 p-2 rounded-full mr-3"><i class="fas fa-exclamation-circle"></i></div>
-                            <div>
-                                <p class="font-medium">Pendiente de pago de matrícula</p>
-                                <p class="text-sm text-gray-500">Hace 2 semanas</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+                
+                <section class="bg-white rounded-lg shadow-md p-6 mb-6" id="academicHistorySection" style="display: none;">
+    <div class="flex justify-between items-center mb-6">
+        <h2 class="text-xl font-bold text-gray-800">Historial Académico</h2>
+        <button id="addCourseBtn" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-md transition-all">
+            <i class="fas fa-plus mr-2"></i>Agregar Materia
+        </button>
+    </div>
+
+    <div id="courseFormContainer" class="hidden bg-blue-50 p-6 rounded-lg mb-6">
+        <h3 class="text-lg font-semibold text-gray-800 mb-4" id="courseFormTitle">Agregar Nueva Materia</h3>
+        <form id="courseForm" class="space-y-4">
+            <div>
+                <label for="courseName" class="block text-sm font-medium text-gray-700">Nombre de la Materia</label>
+                <input type="text" id="courseName" name="courseName" required class="py-2 px-3 block w-full border border-gray-300 rounded-md input-focus focus:ring-blue-500 focus:border-blue-500 transition-all">
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                    <label for="courseCode" class="block text-sm font-medium text-gray-700">Código</label>
+                    <input type="text" id="courseCode" name="courseCode" required class="py-2 px-3 block w-full border border-gray-300 rounded-md input-focus focus:ring-blue-500 focus:border-blue-500 transition-all">
+                </div>
+                <div>
+                    <label for="courseCredits" class="block text-sm font-medium text-gray-700">Créditos</label>
+                    <input type="number" id="courseCredits" name="courseCredits" min="1" required class="py-2 px-3 block w-full border border-gray-300 rounded-md input-focus focus:ring-blue-500 focus:border-blue-500 transition-all">
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                    <label for="courseGrade" class="block text-sm font-medium text-gray-700">Calificación (0-20)</label>
+                    <input type="number" id="courseGrade" name="courseGrade" min="0" max="20" required class="py-2 px-3 block w-full border border-gray-300 rounded-md input-focus focus:ring-blue-500 focus:border-blue-500 transition-all">
+                </div>
+                <div>
+                    <label for="coursePeriod" class="block text-sm font-medium text-gray-700">Período Académico</label>
+                    <input type="text" id="coursePeriod" name="coursePeriod" placeholder="Ej: 2024-II" required class="py-2 px-3 block w-full border border-gray-300 rounded-md input-focus focus:ring-blue-500 focus:border-blue-500 transition-all">
+                </div>
+            </div>
+            <input type="hidden" id="courseId" name="courseId">
+            <div class="flex justify-end space-x-4">
+                <button type="button" id="cancelCourseBtn" class="px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-50 transition-all">Cancelar</button>
+                <button type="submit" id="saveCourseBtn" class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-all">Guardar Materia</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="overflow-x-auto">
+        <table class="min-w-full bg-white rounded-lg shadow-sm">
+            <thead>
+                <tr class="bg-gray-100 border-b border-gray-200">
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Materia</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Código</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Créditos</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Calificación</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Período</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="coursesTableBody" class="divide-y divide-gray-200">
+                </tbody>
+        </table>
+        <p id="noCoursesMessage" class="text-center text-gray-500 mt-4 hidden">Aún no has registrado materias.</p>
+    </div>
+</section>
+
+<section class="bg-white rounded-lg shadow-md p-6 mb-6" id="pensumSection" style="display: none;">
+    <h2 class="text-xl font-bold text-gray-800 mb-4">Pensum de Estudio</h2>
+
+    <div class="mb-4 flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-4">
+        <div class="flex-1">
+            <label for="pensumFilterPeriod" class="block text-sm font-medium text-gray-700">Filtrar por Período:</label>
+            <select id="pensumFilterPeriod" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md">
+                <option value="all">Todos los Períodos</option>
+            </select>
+        </div>
+        <div class="flex-1">
+            <label for="pensumFilterStatus" class="block text-sm font-medium text-gray-700">Filtrar por Estado:</label>
+            <select id="pensumFilterStatus" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md">
+                <option value="all">Todos los Estados</option>
+                <option value="approved">Aprobadas</option>
+                <option value="pending">Pendientes</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="overflow-x-auto">
+        <table class="min-w-full bg-white rounded-lg shadow-sm">
+            <thead>
+                <tr class="bg-gray-100 border-b border-gray-200">
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Materia</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Código</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Créditos</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Período Ideal</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Estado</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Calificación</th>
+                </tr>
+            </thead>
+            <tbody id="pensumTableBody" class="divide-y divide-gray-200">
+                </tbody>
+        </table>
+        <p id="noPensumMessage" class="text-center text-gray-500 mt-4 hidden">No hay materias que coincidan con los filtros.</p>
+    </div>
+</section>
+
+<section class="bg-white rounded-lg shadow-md p-6 mb-6" id="reportsSection" style="display: none;">
+    <h2 class="text-xl font-bold text-gray-800 mb-4">Reportes Académicos</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-blue-50 border-l-4 border-blue-500 rounded-lg p-4 shadow-sm">
+            <div class="flex items-center">
+                <div class="flex-shrink-0 bg-blue-100 p-2 rounded-full">
+                    <i class="fas fa-graduation-cap text-blue-600 text-xl"></i>
+                </div>
+                <div class="ml-3">
+                    <p class="text-sm font-medium text-blue-800">Promedio de Notas</p>
+                    <p class="text-2xl font-bold text-gray-900" id="averageGrade">N/A</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-green-50 border-l-4 border-green-500 rounded-lg p-4 shadow-sm">
+            <div class="flex items-center">
+                <div class="flex-shrink-0 bg-green-100 p-2 rounded-full">
+                    <i class="fas fa-chart-pie text-green-600 text-xl"></i>
+                </div>
+                <div class="ml-3">
+                    <p class="text-sm font-medium text-green-800">Porcentaje de Avance</p>
+                    <p class="text-2xl font-bold text-gray-900" id="progressPercentage">N/A</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-6">
+        <h3 class="text-lg font-semibold text-gray-800 mb-3">Resumen por Período</h3>
+        <div class="overflow-x-auto">
+            <table class="min-w-full bg-white rounded-lg shadow-sm">
+                <thead>
+                    <tr class="bg-gray-100 border-b border-gray-200">
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Período</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Materias Aprobadas</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Créditos Aprobados</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Promedio Período</th>
+                    </tr>
+                </thead>
+                <tbody id="periodSummaryTableBody" class="divide-y divide-gray-200">
+                    </tbody>
+            </table>
+            <p id="noPeriodSummaryMessage" class="text-center text-gray-500 mt-4 hidden">No hay datos de períodos disponibles.</p>
+        </div>
+    </div>
+</section>
+<section class="bg-white rounded-lg shadow-md p-6">
+    <h2 class="text-xl font-bold text-gray-800 mb-4">Actividad Reciente</h2>
+    <div class="space-y-4">
+        <div class="flex items-start border-b pb-4">
+            <div class="bg-blue-100 text-blue-600 p-2 rounded-full mr-3"><i class="fas fa-check"></i></div>
+            <div>
+                <p class="font-medium">Aprobaste la materia "Base de Datos II"</p>
+                <p class="text-sm text-gray-500">Hace 2 días - Calificación: 18</p>
+            </div>
+        </div>
+        <div class="flex items-start border-b pb-4">
+            <div class="bg-green-100 text-green-600 p-2 rounded-full mr-3"><i class="fas fa-book"></i></div>
+            <div>
+                <p class="font-medium">Te matriculaste en "Circuitos"</p>
+                <p class="text-sm text-gray-500">Hace 1 semana</p>
+            </div>
+        </div>
+        <div class="flex items-start border-b pb-4">
+            <div class="bg-yellow-100 text-yellow-600 p-2 rounded-full mr-3"><i class="fas fa-exclamation-circle"></i></div>
+            <div>
+                <p class="font-medium">Pendiente de pago de matrícula</p>
+                <p class="text-sm text-gray-500">Hace 2 semanas</p>
+            </div>
+        </div>
+    </div>
+</section>
             </main>
         </div>
     </div>

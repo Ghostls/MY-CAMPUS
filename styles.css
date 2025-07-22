@@ -1,49 +1,58 @@
 /* Custom CSS para estilos adicionales */
+
+/* Fondo degradado para la sección de autenticación */
 .gradient-bg {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 
+/* Efecto hover para tarjetas, mejorando la interacción visual */
 .card-hover:hover {
     transform: translateY(-5px);
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
+/* Transición suave para todos los elementos con esta clase */
 .transition-all {
     transition: all 0.3s ease;
 }
 
+/* Estilo de foco para campos de entrada, para una mejor usabilidad */
 .input-focus:focus {
     box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.3);
 }
 
+/* Altura de la barra lateral, ajustándose a la ventana */
 .sidebar {
-    height: calc(100vh - 4rem);
+    height: calc(100vh - 4rem); /* Ajusta la altura de la sidebar */
 }
 
+/* Estilo para la pestaña activa en la barra lateral */
 .active-tab {
-    background-color: #e0e7ff;
-    color: #3b82f6;
-    border-left: 4px solid #3b82f6;
+    background-color: #e0e7ff; /* Un azul claro */
+    color: #833bf6; /* El color principal de acento */
+    border-left: 4px solid #833bf6; /* Una línea para indicar la selección */
 }
 
+/* Estilos base para modales (aunque Tailwind suele manejar `hidden`, estos son para una estructura básica de modal) */
 .modal {
-    display: none;
-    position: fixed;
-    z-index: 50;
+    display: none; /* Por defecto oculto, controlado por JS */
+    position: fixed; /* Fijo en la pantalla */
+    z-index: 50; /* Por encima de otros elementos */
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.4);
+    overflow: auto; /* Permite scroll si el contenido es largo */
+    background-color: rgba(0,0,0,0.4); /* Fondo semi-transparente */
 }
 
+/* Contenido del modal */
 .modal-content {
-    background-color: #fefefe;
-    margin: 10% auto;
+    background-color: #fefefe; /* Fondo blanco */
+    margin: 10% auto; /* Centrado vertical y horizontalmente */
     padding: 20px;
     border: 1px solid #888;
     width: 80%;
-    max-width: 600px;
-    border-radius: 0.5rem;
+    max-width: 600px; /* Ancho máximo */
+    border-radius: 0.5rem; /* Bordes redondeados */
 }
